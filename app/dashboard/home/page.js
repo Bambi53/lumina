@@ -1,6 +1,10 @@
-    "use client"
+"use client"
 import { Appcontext } from "@/component/context";
 import { useEffect, useState, useContext} from "react";
+import Student from "../student";
+import Image from "next/image";
+import Link from "next/link";
+import {FaSearch} from "react-icons/fa"
 
 
 
@@ -27,7 +31,10 @@ useEffect(() => {
         <div className="flex justify-center items center gap-4">
         <button onClick={() => (setCount(count + 1))} className="bg-blue-400 border-1 border-gray-700 w-[100px]">Increment</button>
         <button onClick={() => (setCount(count - 1))} className="bg-blue-400 border-1 border-gray-700 w-[100px]">Decrement</button>
-        <p>This is the new user : {user}</p>
+        <Student  name= "Emmanuel" age= "23" />
+        <FaSearch className="text-blue-200"/>
+        <Image scr="" width={4} height={3} alt=""/>
+        <Link href=""></Link>
         </div>
       </main>
   );
