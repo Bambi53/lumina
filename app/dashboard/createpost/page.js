@@ -1,21 +1,40 @@
     "use client"
-import { TextField } from "@mui/material";
-import { useFormik, validateYupSchema } from "formik";
+import { CircularProgress, TextField } from "@mui/material";
+import { addDoc, collection } from "firebase/firestore";
+import { useFormik } from "formik";
 import * as Yup from "yup"
+import { db } from "@config/firebase.config";
+import { useState } from "react";
 
 const schema = Yup.object().shape({
     title: Yup.string().required("Title is required"),
     body: Yup.string().required("Title"),
-
-    validationSchema:schema    
+  
 })
 
 
-export default function createpost () {
+export default function createPost ({userId}) {
+    const [opsProgress, setOpsProgress] = useState(false);
     const {handleSubmit, handleChange, handleBlur, values, erros, touched} = useFormik({
-        initialValues:{title:", body:"},
-        onSubmit: ()=> {},
-        validationSchema:schema
+        initialValues:{title:"", body:""},
+        onSubmit: async()=> {
+            setOpsProgress(true);
+            await addDoc(collection(db, "post"),{
+                user: userId,
+                title:values.title,
+                body:values.body,
+                timecreated: new Date().getTime()
+            }).then(() =>{
+                setOpsProgress(false);
+                alert("you have sucessfully submitted your post")
+            })
+            .catch(e =>{
+                setOpsProgress(false);
+                console.error(e);
+                alert("you have encountered an unknown error")
+            })
+        },
+        validationSchema:schema,
     })
        
     return(
@@ -52,6 +71,7 @@ export default function createpost () {
                          {touched.title && erros.title ? <span className="text-red-500">{erros.body}</span>:null}
                     </div>
                     <button type="submit" className="bg-green-600 w-full h-[40px]">Submit post</button>
+                    <CircularProgress style={{display:!opsProgress ? "none": "flex" }}/>
                 </form>
             </div>
         </main>

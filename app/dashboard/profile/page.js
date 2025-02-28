@@ -28,7 +28,7 @@ export default function profile () {
                     >
                         <Button className="w-full" variant="contained" color="error" type="submit">Log out</Button>
                         <Link href={"/dashbord/updat-profile"}
-                        className="p-2 bg-green-600 rounded-md text-lg text-white text-center">
+                        className="p-2 bg-green-600 rounded-md text-lg text-white text-center w-full">
                             Update profile
                         </Link>
                     </form>

@@ -9,8 +9,7 @@
   import { FaBroom } from "react-icons/fa";
   import { GiTakeMyMoney } from "react-icons/gi";
   import { FaCarrot } from "react-icons/fa";
-  import { FaScissors } from "react-icons/fa6";
-
+  import { FaScissors } from "react-icons/fa6"; 
 
 
 
@@ -149,7 +148,7 @@
             <div className="grid items-center mx-4 px-4">
              <input className="border-2 border-black rounded p-2 m-2" type="email" id="input-field" placeholder="Enter your email" required></input>
              <input className="border-2 border-black rounded p-2 m-2" type="password" id="input-field" placeholder="Enter your password" required></input>
-              <Button className="bg-green-700 h-[50px]" variant="contained" href="#contained-buttons">Sign up</Button>
+              <Button className="bg-green-700 h-[50px]" variant="contained" href="#contained-buttons">Login</Button>
           </div> 
           <p className="text-gray-600 p-4 mx-4 text-sm">If you don't have an account click 
            <Link href="#" className="text-gray-800 hover:text-green-400 underline"> here </Link>{""} to sign up</p>

@@ -8,7 +8,7 @@ const year = new Date().getFullYear();
 
 function Footer() {
     return(
-        <footer className='grid grid-cols-1 gap-4 lg:gap-o lg:grid-clos-3 py-4 px-2 md:px-8 lg:px-16'>
+        <footer className='grid grid-cols-1 gap-4 lg:gap-o lg:grid-cols-3 py-4 px-2 md:px-8 lg:px-16'>
             <div>
                 <p className="text=2xl text-gray-800 font-bold">Lumina</p>
                 <p className=''>&copy;{year}Lumina blog</p>
@@ -24,9 +24,9 @@ function Footer() {
                     <li><Link href="#"><FaTiktok /></Link></li>   
                 </ul>
                 <ul className="flex justify-end items-center gap-4">
-                    <li><Link href="#" className="text-sm text-gray-600">Termss of use</Link></li>
-                    <li><Link href="#" className="text-sm text-gray-600">Privacy policy</Link></li>
-                    <li><Link href="#" className="text-sm text-gray-600">Bug bounty</Link></li>   
+                    <li><Link href="#" className="text-sm text-gray-600 underline">Termss of use</Link></li>
+                    <li><Link href="#" className="text-sm text-gray-600 underline">Privacy policy</Link></li>
+                    <li><Link href="#" className="text-sm text-gray-600 underline">Bug bounty</Link></li>   
                 </ul>
                 
             </div>
